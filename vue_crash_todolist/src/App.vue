@@ -2,7 +2,7 @@
 <template>
   <div id="app">
     <!-- Add the Todos component and pass it todos props -->
-    <Todos v-bind:todos="todos" />
+    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
   </div>
 </template>
 
@@ -35,6 +35,11 @@ export default {
       ],
     };
   },
+  methods: {
+    deleteTodo(id) {
+      this.todos = this.todos.filter(todo => todo.id !== id);
+    }
+  }
 };
 </script>
 
@@ -46,7 +51,8 @@ export default {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Cedarville Cursive", cursive;
+  font-size: 24px;
   line-height: 1.4;
 }
 </style>
