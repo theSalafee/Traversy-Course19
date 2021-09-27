@@ -3,9 +3,8 @@
     <p>
       <input type="checkbox" v-on:change="markComplete" />
       {{ todo.title }}
-       <button @click="$emit('del-todo', todo.id)" class="del">x</button>
+      <button @click="$emit('del-todo', todo.id)" class="del">x</button>
     </p>
-   
   </div>
 </template>
 
@@ -41,11 +40,9 @@ export default {
   border-radius: 50%;
   cursor: pointer;
   float: right;
-
-
 }
 
-  .del:hover {
-      background: rgb(172, 27, 27);
-  }
+.del:hover {
+  background: rgb(172, 27, 27);
+}
 </style>
